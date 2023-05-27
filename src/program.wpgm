@@ -1,0 +1,10 @@
+import wollok.game.*
+import config.*
+
+program abc {
+
+	config.iniciar() 
+	
+	game.start()
+
+}
