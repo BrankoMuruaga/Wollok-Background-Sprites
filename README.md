@@ -61,6 +61,18 @@ Para crear un personaje a partir de esta clase se debe crear un objeto que hered
 
 ![Personaje animado muestra](Assets/personajeAnimadoMuestra.gif)
 
+
+___
+Se aconseja revisar el codigo ya que hay implementadas varias funciones que las cuales seria muy largo de explicar acá
+
+Basicamente esto es todo lo que logre hacer:
+- Cambiar entre personajes
+- Agregar una animacion independiente para cada uno
+- Detener el fondo si se desea (Por Ej. si un personaje muere)
+
+![Iteracion entre personajes](Assets/prueba-sprites.gif)
+
+
 ___
 
 ### Problemas encontrados que no pude solucionar

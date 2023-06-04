@@ -31,6 +31,8 @@ object guerreroElemental inherits Personaje{
 	
 	override method spritesIniciales() = spriteCorrer
 	
+	override method position() = game.at(-200, -1)
+	
 	method correr(){
 		self.cambiarSprite(spriteCorrer)
 	}
