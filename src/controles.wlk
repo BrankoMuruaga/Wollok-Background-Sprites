@@ -11,6 +11,17 @@ object personajeActual{
 	var property personaje = mago
 }
 
+/*
+Controles:
+Derecha - Correr
+Izquierda - Pararse
+Espacio - Atacar
+C - Cambiar de personaje
+D - Morir
+
+No todos los personajes tienen las animaciones correspondientes al comando, asi que en ese caso no hacen nada
+*/
+
 object controles {
 	method iniciarControles(){
 		const personajes = personajeActual.personajes()
