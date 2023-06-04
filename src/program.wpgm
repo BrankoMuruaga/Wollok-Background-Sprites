@@ -1,10 +1,11 @@
 import wollok.game.*
 import config.*
+import puntaje.*
 
 program abc {
 
-	config.iniciar() 
-	
+	config.iniciar()
+		
 	game.start()
 
 }

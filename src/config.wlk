@@ -1,8 +1,7 @@
 import wollok.game.*
-import background.*
-import character.*
-import soldado.*
+import personaje.*
 import fondo.*
+import controles.*
 
 object config {
 	
@@ -12,9 +11,11 @@ object config {
 		game.width(540)
 		game.height(300)
 		
+		controles.iniciarControles()
+		
 		fondo.iniciar()
 		
-		soldado.iniciar()
+		personajeActual.personaje().iniciar()
 	}
 	
 }
