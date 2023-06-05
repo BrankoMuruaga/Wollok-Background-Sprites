@@ -17,6 +17,9 @@ class Personaje {
 	method spritesIniciales()
 	
 	/*------------------------------------------------------*/
+	
+	method initialize(){}
+	
 	method iniciar(){
 		game.addVisual(personaje)
 		personaje.animar()
@@ -69,12 +72,15 @@ class Personaje {
 		 * 			  spriteAPasar: una lista - Los sprites a pasar una sola vez antes de pasar a *spriteSiguiente*.
 		 * 			  spriteSiguiente: una lista - Los sprites a pasar de manera constante luego de pasar *spriteAPasar*.
 		 */
-		 
-		const duracionDelSprite = personaje.velocidad() * spriteAPasar.size()
 		
 		self.cambiarSprite(spriteAPasar)
 		
-		game.schedule(duracionDelSprite, {self.cambiarSprite(spriteSiguiente)})
+		game.onTick(personaje.velocidad(), "control de corte", {
+			if(personaje.image() == spriteAPasar.last()){
+			self.cambiarSprite(spriteSiguiente)
+			game.removeTickEvent("control de corte")
+		}
+		})
 	}
 }
 
@@ -89,6 +95,7 @@ class CharacterAnimado {
 	const property images
 	var personaje
 	const property velocidad = 50
+	var index = -1
 	
 	method position() = personaje.position()
 	
@@ -104,12 +111,12 @@ class CharacterAnimado {
 	
 	method animar(){
 		self.image(images.first())
-		game.onTick(velocidad, "characterAnimate", {self.image(self.pasarSprite())})
+		game.onTick(velocidad, "characterAnimate", {
+			self.image(self.pasarSprite())
+		})
 	}
 	
 	method pasarSprite(){
-		const indexImg = (0.. images.size()-1)
-		var index = indexImg.find{i => images.get(i) == self.image()}
 		index++
 		return images.get(index % images.size())
 		}

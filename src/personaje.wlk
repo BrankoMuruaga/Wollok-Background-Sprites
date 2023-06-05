@@ -20,7 +20,8 @@ object guerreroElemental inherits Personaje{
 	const spriteAtacar = 
 				["3_atk_1.png","3_atk_2.png","3_atk_3.png","3_atk_4.png","3_atk_5.png","3_atk_6.png","3_atk_7.png",
 				"3_atk_8.png","3_atk_9.png","3_atk_10.png","3_atk_11.png","3_atk_12.png","3_atk_13.png","3_atk_14.png",
-				"3_atk_15.png","3_atk_16.png","3_atk_17.png","3_atk_18.png","3_atk_19.png","3_atk_20.png"]
+				"3_atk_15.png","3_atk_16.png","3_atk_17.png","3_atk_18.png","3_atk_19.png","3_atk_20.png","3_atk_21.png",
+				"3_atk_22.png","3_atk_23.png","3_atk_24.png","3_atk_25.png","3_atk_26.png","3_atk_27.png","3_atk_28.png"]
 				
 	const spriteAtaqueAereo = 
 					["air_atk_1.png","air_atk_2.png","air_atk_3.png","air_atk_4.png",
@@ -82,4 +83,23 @@ object soldado inherits Personaje {
 	}
 	
 	method morir(){}
+}
+
+object calavera inherits Personaje(velocidadDeSprite = 100){
+	const calavera = ["cal0.png","cal1.png","cal2.png","cal3.png"]
+	const calaveraEnLlamas = ["calF0.png","calF1.png","calF2.png","calF3.png","calF4.png","calF5.png","calF6.png","calF7.png"]
+	
+	override method initialize(){
+		self.position(game.center())
+	}
+	
+	override method spritesIniciales() = calavera
+	
+	method atacar(){
+		self.cambiarSprite(calaveraEnLlamas)
+	}
+	
+	method pararse(){
+		self.cambiarSprite(calavera)
+	}
 }

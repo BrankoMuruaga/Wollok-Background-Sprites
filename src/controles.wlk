@@ -6,7 +6,7 @@ import fondo.*
 
 
 object personajeActual{
-	const property personajes = [mago, soldado, guerreroElemental]
+	const property personajes = [mago, soldado, guerreroElemental,calavera]
 	
 	var property personaje = mago
 }
