@@ -77,7 +77,6 @@ ___
 
 ### Problemas encontrados que no pude solucionar
 - El metodo *"onTick"* parece no funcionar del todo bien, ya que las animaciones se realentizan cada cierto tiempo.
-- Por algun motivo, quiza tenga que ver con el funcionamiento de *"onTick"*, en el metodo *"cambiarSpriteDe_A_()"* en la clase *"Personaje"*, si se le pasa como primer argumento una lista con muchos elementos (o sea un sprite con muchos frames), esta no se reproduce en su totalidad. Se intento solucionarlo alargando el tiempo en que se reproduce una y pasa a la otra, pero esto hace que surjan otros errores, como que se reproduce mas de una vez la animacion si esta tiene pocos frames.
 
 
 
